@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Ура! Пришла техника!</title>
+</head>
+<body>
+  <!-- Заголовок -->
+<h1 align="center">Приход новой техники</h1>
+  <!-- Таблица внесения данных -->
+<table  align="center" border="1px" class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Категория</th>
+      <th scope="col">Жертвователь</th>
+      <th scope="col">Наименование</th>
+      <th scope="col">Серийный номер</th>
+      <th scope="col">Доп. инфо</th>
+      <th scope="col">Размещение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <form action="/tech" method="post">
+        <td>
+          <select>
+          <option selected>Что передал?</option>
+          <option>Ноутбук</option>
+          <option>Моноблок</option>
+          <option>Системный блок</option>
+          <option>Монитор</option>
+          <option>Гарнитура</option>
+          <option>Web камера</option>
+          <option>Клавиатура</option>
+          <option>Мышь</option>
+        </select>"""
+        </td>
+        <td>
+          <select>
+            <option selected>Кто передал?</option>
+            <option>Жертвователь</option>
+            <option>Жертвователь2</option>
+          </select>
+        </td>
+        <td><input type="text" name="title" placeholder="Наименование"></td>
+        <td><input type="text" name="sernum" placeholder="Серийный номер"></td>
+        <td><input type="text" name="addinf" placeholder="Доп. инфо"></td>
+        <td>
+          <select>
+          <option selected>Где находится?</option>
+          <option>A1</option>
+          <option>A2</option>
+          <option>A3</option>
+          <option>B1</option>
+          <option>B2</option>
+          <option>B3</option>
+          <option>C1</option>
+          <option>C2</option>
+          </select>
+        </td>
+      </tr>
+  </tbody>
+</table>
+<br><br><br>
+<table align="center"><tr><td><button align="center" type="submit">Сохранить</button></td></tr></table>
+</form>
+
+</body>
