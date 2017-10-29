@@ -12,8 +12,10 @@
     <tr>
       <th scope="col">Категория</th>
       <th scope="col">Жертвователь</th>
+      <th scope="col">Дата передачи</th>
       <th scope="col">Наименование</th>
       <th scope="col">Серийный номер</th>
+      <th scope="col">Баланс</th>
       <th scope="col">Доп. инфо</th>
       <th scope="col">Размещение</th>
     </tr>
@@ -22,7 +24,7 @@
     <tr>
       <form action="/tech" method="post">
         <td>
-          <select>
+          <select name="what">
           <option selected>Что передал?</option>
           <option>Ноутбук</option>
           <option>Моноблок</option>
@@ -32,20 +34,27 @@
           <option>Web камера</option>
           <option>Клавиатура</option>
           <option>Мышь</option>
-        </select>"""
+        </select>
         </td>
         <td>
-          <select>
+          <select name="whogiver">
             <option selected>Кто передал?</option>
             <option>Жертвователь</option>
             <option>Жертвователь2</option>
           </select>
         </td>
+        <td><input type="date" name="dtof" placeholder="Дата передачи" min="2010-01-01" max="2030-12-12" required></td>
         <td><input type="text" name="title" placeholder="Наименование"></td>
         <td><input type="text" name="sernum" placeholder="Серийный номер"></td>
+        <td>
+          <select name="balance">
+          <option selected>1</option>
+          <option>0</option>
+          </select>
+        </td>
         <td><input type="text" name="addinf" placeholder="Доп. инфо"></td>
         <td>
-          <select>
+          <select name="location">
           <option selected>Где находится?</option>
           <option>A1</option>
           <option>A2</option>
