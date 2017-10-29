@@ -26,7 +26,7 @@ post '/tech' do
   @dtof = params[:dtof]
   @title = params[:title]
   @sernum = params[:sernum]
-  @balance = params[:balans]
+  @balance = params[:balance]
   @addinf = params[:addinf]
   @location = params[:location]
   db = get_db
