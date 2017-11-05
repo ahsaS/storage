@@ -1,0 +1,3 @@
+#Выгрузка из SQLite3 в csv.
+sqlite3 -header -csv /home/sasha/Documents/databases/STORAGE.db "SELECT * FROM SENDED;" > 1.csv
+#Выгрузка из SQLite3 в csv.

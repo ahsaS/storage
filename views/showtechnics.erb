@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Нужна техника?</title>
+</head>
+<body>
+  <!-- Заголовок -->
+<h1 align="center">Просмотр склада</h1>
+  <!-- Таблица внесения данных -->
+<table  align="center" border="1px" class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Выбери категорию</th>
+      <th scope="col">Выбери Жертвователя</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <form action="/showtech" method="post">
+        <td>
+          <select name="what">
+          <option selected>Что передал?</option>
+          <option>Ноутбук</option>
+          <option>Моноблок</option>
+          <option>Системный блок</option>
+          <option>Монитор</option>
+          <option>Гарнитура</option>
+          <option>Web камера</option>
+          <option>Клавиатура</option>
+          <option>Мышь</option>
+        </select>
+        </td>
+        <td>
+          <select name="whogiver">
+            <option selected>Кто передал?</option>
+            <option>Жертвователь</option>
+            <option>Жертвователь</option>
+            <option>Жертвователь</option>
+          </select>
+        </td>
+        </tr>
+  </tbody>
+</table>
+<br><br>
+<table align="center"><tr><td><button align="center" type="submit">Найти</button></td></tr></table>
+</form><br>
+<table id="hidden" border="1px"></table>
+<script>if (1 <= <%=@result.size%>) {
+  document.getElementById("hidden").innerHTML = "<thead><tr><th>Категория</th><th>Жертвователь</th><th>Дата</th><th>Описание</th><th>Серийный</th><th>Баланс</th><th>Доп. инфо</th><th>Место</th></tr></thead><tbody><%@result.each do |hh|%><tr><th><%=hh['CATEGORIES']%></th><th><%=hh['GIVER']%></th><th><%=hh['DATE_OF']%></th><th><%=hh['TITLE']%></th><th><%=hh['SERIAL']%></th><th><%=hh['BALANCE']%></th><th><%=hh['ADDINF']%></th><th><%=hh['LOCATION']%></th><th><form action='/sendtech' method='post'><input name='destination' type='text'><input name='id' type='text' value='<%=hh['id']%>' hidden='true'><button type='submit'>Отправить</button></form></th></tr><%end%></tbody>";
+}</script>
+</body>
